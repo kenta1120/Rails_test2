@@ -1,0 +1,9 @@
+<h1><%= @user.name %>のプロフィール</h1>
+<% if @user.avatar.attached? %>
+ <div>
+   <%= image_tag @user.avatar class: "avatar-image"%>
+ </div>
+<% end %>
+<p>自己紹介：<%= @user.introduction %></p>
+<%= link_to "編集", edit_user_path(@user)%>
+<%= link_to "施設一覧へ戻る", rooms_path %>

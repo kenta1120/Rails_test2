@@ -1,0 +1,10 @@
+<h2>予約詳細</h2>
+<div class="reservation-detail">
+  <p>チェックイン日：<%= @reservation.check_in %></p>
+  <p>チェックアウト日：<%= @reservation.check_out%></p>
+  <p>宿泊日数：<%= @reservation.stay_days %>泊</p>
+  <p>人数：<%= @reservation.guests %>人</p>
+  <p>合計金額：<%= @reservation.total_price %>円</p>
+</div>
+
+<%= link_to "戻る", room_reservations_path(@reservation.room), class: "btn btn-secondary" %>

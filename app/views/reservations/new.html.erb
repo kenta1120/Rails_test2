@@ -1,0 +1,22 @@
+<h2><%= @room.name %>の予約</h2>
+
+<%= form_with model: [@room, @reservation], local: true, class: "reservation-form" do |f|%>
+  <div>
+    <%= f.label :guests, "宿泊人数" %>
+    <%= f.number_field :guests, min: 1 %>
+  </div>
+  
+  <div>
+    <%= f.label :check_in, "チェックイン日"%>
+    <%= f.date_field :check_in, require: true %>
+  </div>
+
+  <div>
+    <%= f.label :check_out, "チェックアウト日" %>
+    <%= f.date_field :check_out, require: true %>
+  </div>
+
+  <%= f.submit "予約する", class: "btn btn-primary" %>
+<% end %>
+
+<%= link_to "戻る", room_path(@room), class: "btn btn-secondary" %>

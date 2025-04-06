@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  room: one
+  check_in: 2025-03-26
+  check_out: 2025-03-26
+  guests: 1
+
+two:
+  room: two
+  check_in: 2025-03-26
+  check_out: 2025-03-26
+  guests: 1

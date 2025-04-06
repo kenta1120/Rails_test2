@@ -1,0 +1,27 @@
+// Place all the styles related to the reservations controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.reservation-form {
+  padding: 15px;
+  justify-items: center;
+}
+
+.reservation-form div {
+  margin-bottom: 20px;
+}
+
+/* 予約一覧 */
+.reservation-list {
+  padding: 15px;
+  justify-items: center;
+}
+
+.my_reservation-list {
+  justify-items: center;
+  text-align: left;
+}
+
+/* 予約詳細　*/
+.reservation-detail {
+  justify-items: center;
+}

@@ -1,0 +1,29 @@
+<h2>施設編集</h2>
+
+<%= form_with(model: @room, local: true, class: "rooms-edit") do |form| %>
+  <div>
+    <%= form.label :image, "画像" %>
+    <%= form.file_field :image%>
+  </div>
+
+  <div>
+    <%= form.label :name, "施設名" %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div>
+    <%= form.label :description, "紹介文" %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div>
+    <%= form.label :price, "宿泊料金" %>
+    <%= form.number_field :price %>
+  </div>
+
+  <div>
+    <%= form.submit "更新" %>
+  </div>
+<% end %>
+
+<%= link_to "戻る", rooms_path %>

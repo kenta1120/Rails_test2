@@ -11,6 +11,37 @@
   </head>
 
   <body>
+    <header>
+      <nav>
+        <% if user_signed_in? %>
+          <div class="dropdown">
+          <% if current_user.respond_to?(:avatar) && current_user.avatar.attached? %>
+            <%= image_tag current_user.avatar, class: "avatar-icon"%>
+          <% else %>
+            <%= image_tag "default-avatar.png", class: "avatar-icon" %>
+          <% end %>
+            <button class="dropdown-toggle" id="dropdown-button"><%= current_user.name %></button>
+            <div class="dropdown-menu" id="dropdown-menu">
+              <%= link_to "アカウント編集", edit_user_registration_path %>
+              <%= link_to "プロフィール編集", edit_profile_path %>
+              <%= link_to "予約一覧", my_reservations_path %>
+              <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+            </div>
+          </div>
+        <% else %>
+          <%= link_to "ログイン", new_user_session_path %>
+          <%= link_to "新規登録", new_user_registration_path%>
+        <% end %>
+
+        <%= form_with url: searches_path, method: :get, local: true, class: "search-form" do %>
+          <%= select_tag :area, options_for_select(["", "東京", "大阪", "京都", "札幌"], params[:area]), class: "search-select"%>
+
+          <%= text_field_tag :search, params[:search], class: "search-input" %>
+
+          <%= submit_tag "検索", class: "search-button"%>
+        <% end %>
+      </nav>
+    </header>
     <%= yield %>
   </body>
 </html>
