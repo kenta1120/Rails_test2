@@ -40,6 +40,7 @@ h2 {
   border-radius: 5px;
   text-decoration: none;
   cursor: pointer;
+  margin-bottom: 10px;
 }
 
 .btn-primary {
@@ -55,7 +56,7 @@ h2 {
 }
 
 .room-info img {
-  width: 100%;
+  max-width: 600px;
 }
 
 .room-info h2 {
@@ -68,8 +69,17 @@ h2 {
 
 .room-info a {
   text-decoration: none;
+  font-weight: bold;
   color: red;
   cursor: pointer;
+}
+
+p a {
+  font-size: 20px;
+  text-decoration: none;
+  background-color: aqua;
+  padding: 5px;
+  border-radius: 10px;
 }
 
 /* ルーム編集*/
@@ -80,4 +90,26 @@ h2 {
 
 .rooms-edit div {
   padding: 10px;
+}
+
+/* 施設詳細　*/
+h1 {
+  text-align: center;
+}
+
+.rooms-detail {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 20px;
+}
+
+.rooms-detail p {
+  font-size: 16px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.btn-secondary {
+  color: silver;
+  background-color: black;
 }

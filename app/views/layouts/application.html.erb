@@ -29,8 +29,8 @@
             </div>
           </div>
         <% else %>
-          <%= link_to "ログイン", new_user_session_path %>
-          <%= link_to "新規登録", new_user_registration_path%>
+          <%= link_to "ログイン", new_user_session_path, class: "login-link" %>
+          <%= link_to "新規登録", new_user_registration_path, class: "new-link"%>
         <% end %>
 
         <%= form_with url: searches_path, method: :get, local: true, class: "search-form" do %>

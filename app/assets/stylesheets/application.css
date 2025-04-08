@@ -14,7 +14,8 @@
  *= require_self
  */
 
- @import "rooms";
+@import "rooms";
+@import "profiles";
 
 .dropdown {
   position: relative;
@@ -57,6 +58,26 @@ nav {
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
+}
+
+.login-link, .new-link {
+  margin-right: 10px;
+  text-decoration: none;
+  background-color: greenyellow;
+  color: black;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.signup-link, .forget-password {
+  display: inline-block;
+  text-decoration: none;
+  background-color: blue;
+  border-bottom: 1px solid black;
+  color: white;
+  padding: 5px;
+  margin-bottom: 10px;
+  border-radius: 5px;
 }
 /* 検索　*/
 .search-form {

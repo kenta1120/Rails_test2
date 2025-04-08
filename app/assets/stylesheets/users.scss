@@ -4,6 +4,36 @@
 .start-form {
   justify-items: center;
 }
+
+.avatar-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* アカウント編集 */
 .field {
-  margin-bottom: 15px;
+  margin-bottom: 10px;
+  text-align: center;
+  padding: 10px;
+}
+
+.actions {
+  text-align: center;
+}
+
+.btn-account {
+  font-size: 15px;
+  margin-bottom: 20px;
+  border: none;
+}
+
+/* ログイン・新規登録 */
+.button-login {
+  border: none;
+  background-color: blue;
+  color: white;
+  border-radius: 5px;
+  padding: 8px;
 }
