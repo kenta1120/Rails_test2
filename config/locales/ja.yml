@@ -22,4 +22,4 @@ ja:
         address: "住所"
   errors:
     messages:
-     not_saved: "%{count}件のエラーにより保存できませんでした"
+      not_saved: "%{count}件のエラーにより保存できませんでした"

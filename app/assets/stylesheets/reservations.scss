@@ -21,10 +21,25 @@
   height: auto;
 }
 
+.reservation-image {
+  max-width: 100%;
+  height: auto;
+}
+
 .reservation-list {
   display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
   padding: 15px;
   justify-items: center;
+}
+
+.reservation-li {
+  padding: 15px;
+  border: 1px solid silver;
+  border-radius: 5px;
+  text-align: center;
+  background-color: rgb(85, 183, 85);
 }
 
 .my_reservation-list {
