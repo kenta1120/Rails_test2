@@ -28,5 +28,16 @@
 
   <%= f.submit "登録する", class: "btn btn-primary" %>
 <% end %>
+
+<% if @room.errors.any? %>
+  <div class="alert alert-danger">
+    <ul>
+      <% @room.errors.full_messages.each do |message|%>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <%= link_to "戻る", rooms_path, class: "btn btn-secondary" %>
 </div>
