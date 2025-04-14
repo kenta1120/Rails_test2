@@ -19,8 +19,9 @@ class UsersController < ApplicationController
   end
 
   def update
-    if current_user.update(params.require(:user).permit(:avatar, :name, :introduction))
-      redirect_to user_path(current_user)
+    @user = current_user
+    if @user.update(params.require(:user).permit(:avatar, :name, :introduction))
+      redirect_to user_path(@user), notice: "プロフィールを更新しました。"
     else
       render :edit
     end
