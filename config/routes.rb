@@ -4,14 +4,10 @@ Rails.application.routes.draw do
   get 'my_reservations', to: 'reservations#my_reservations', as: 'my_reservations'
   root 'top#index'
   resources :rooms do
-    resources :reservations, only: [:index, :new, :create, :destroy] do
+    resources :reservations, only: [:index, :new, :create, :show, :destroy] do
       collection do
         get 'confirm'
         post 'confirm'
-      end
-
-      member do
-        get 'show'
       end
     end
 
