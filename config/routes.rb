@@ -2,9 +2,18 @@ Rails.application.routes.draw do
   get 'rooms/search', to: 'rooms#search', as: 'search_rooms'
   get 'searches', to: 'searches#index', as: 'searches'
   get 'my_reservations', to: 'reservations#my_reservations', as: 'my_reservations'
-  root 'rooms#index'
+  root 'top#index'
   resources :rooms do
-    resources :reservations, only: [:index, :new, :show, :create, :destroy]
+    resources :reservations, only: [:index, :new, :create, :destroy] do
+      collection do
+        get 'confirm'
+        post 'confirm'
+      end
+
+      member do
+        get 'show'
+      end
+    end
 
     collection do
       get :search

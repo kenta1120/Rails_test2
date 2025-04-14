@@ -2,8 +2,24 @@ ja:
   activerecord:
     models:
       user: "ユーザー"
+      reservation: "予約"
+      room: "施設"
     attributes:
       user:
+        name: "名前"
         email: "メールアドレス"
         password: "パスワード"
         password_confirmation: "確認用パスワード"
+        current_password: "現在のパスワード"
+      reservation:
+        check_in: "チェックイン"
+        check_out: "チェックアウト"
+        guests: "人数"
+      room:
+        name: "施設名"
+        price: "料金"
+        description: "紹介文"
+        address: "住所"
+  errors:
+    messages:
+     not_saved: "%{count}件のエラーにより保存できませんでした"

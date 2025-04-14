@@ -50,13 +50,24 @@ h2 {
 }
 
 /* 施設一覧*/
+.room-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 15px;
+}
+
 .room-info {
+  border: 1px solid silver;
+  border-radius: 5px;
+  background-color: yellow;
   padding: 15px;
   text-align: center;
 }
 
 .room-info img {
-  max-width: 600px;
+  max-width: 300px;
+  height: auto;
 }
 
 .room-info h2 {
@@ -101,6 +112,7 @@ h1 {
   max-width: 800px;
   margin: 30px auto;
   padding: 20px;
+  text-align: center;
 }
 
 .rooms-detail p {
@@ -112,4 +124,9 @@ h1 {
 .btn-secondary {
   color: silver;
   background-color: black;
+}
+
+.room-img {
+  width: 600px;
+  height: auto;
 }

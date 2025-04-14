@@ -11,14 +11,35 @@
 }
 
 /* 予約一覧 */
+.my-room-name {
+  text-decoration: none;
+  color: red;
+}
+
+.room-image {
+  max-width: 100%;
+  height: auto;
+}
+
 .reservation-list {
+  display: grid;
   padding: 15px;
   justify-items: center;
 }
 
 .my_reservation-list {
-  justify-items: center;
-  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 15px;
+}
+
+.my_reservation {
+  padding: 15px;
+  border: 1px solid silver;
+  border-radius: 5px;
+  text-align: center;
+  background-color: rgb(85, 183, 85);
 }
 
 .btn-info {
@@ -33,4 +54,43 @@
 /* 予約詳細　*/
 .reservation-detail {
   justify-items: center;
+}
+
+/* エラー表示　*/
+.alert-danger {
+  border: 1px solid red;
+  border-radius: 5px;
+  background-color: yellow;
+  margin-bottom: 20px;
+  text-align: center;
+  list-style: none;
+}
+
+/* 予約確認　*/
+.confirm-list {
+  text-align: center;
+}
+
+.confirm-list p {
+  padding: 10px;
+}
+
+.btn-primary {
+  display: inline-block;
+  text-align: center;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+.btn-secondary {
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 5px;
+  margin: 20px 0 0 15px;
+}
+
+.confirm-submit {
+  text-align: center;
 }

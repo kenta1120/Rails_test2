@@ -16,6 +16,39 @@
 
 @import "rooms";
 @import "profiles";
+/* ヘッダー */
+body {
+  margin: 0;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: rgb(15, 15, 136);
+}
+
+/* アプリ名　*/
+.title {
+  font-size: 30px;
+  font-weight: bold;
+  margin-left: 50px;
+}
+
+.title-link {
+  text-decoration: none;
+  color: greenyellow;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+/* ユーザー　*/
+.user-items {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-right: 50px;
+}
 
 .dropdown {
   position: relative;
@@ -23,10 +56,10 @@
 }
 
 .dropdown-toggle {
-  background-color: none;
+  background-color: white;
   border: none;
   cursor: pointer;
-  font-size: 15px;
+  font-size: 20px;
 }
 
 .dropdown-menu {
@@ -80,28 +113,37 @@ nav {
   border-radius: 5px;
 }
 /* 検索　*/
-.search-form {
-  margin-left: auto;
+.searches {
   display: flex;
+  justify-content: center;
   align-items: center;
-  margin-top: 10px;
+  background-color: silver;
+  height: 100px;
+  gap: 15px;
 }
 
-.search-select {
+.searches-input, .searches-select {
+  width: 160px;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
 }
 
-.search-input {
+.searches-button {
   padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.search-button {
-  padding: 10px;
+  background-color: greenyellow;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+}
+
+/* プロフィール画像*/
+.avatar-image {
+  width: 60px;
+  height: 60px;
+  background-color: #ccc;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 50%;
+  margin-right: 5px;
 }
