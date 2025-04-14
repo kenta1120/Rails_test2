@@ -1,0 +1,52 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.start-form {
+  justify-items: center;
+}
+
+.avatar-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* アカウント編集 */
+.field {
+  margin-bottom: 10px;
+  text-align: center;
+  padding: 10px;
+}
+
+.actions {
+  text-align: center;
+}
+
+.btn-account {
+  font-size: 15px;
+  margin-bottom: 20px;
+  border: none;
+}
+
+/* ログイン・新規登録 */
+.button-login {
+  border: none;
+  background-color: blue;
+  color: white;
+  border-radius: 5px;
+  padding: 8px;
+}
+
+/* プロフィール編集　*/
+.profile-form-edit {
+  text-align: center;
+}
+
+.alert-danger {
+  margin-top: 20px;
+}
+
+.alert-danger li {
+  list-style: none;
+}

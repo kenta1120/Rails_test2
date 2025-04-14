@@ -1,0 +1,26 @@
+// Place all the styles related to the profiles controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+/* プロフィール編集 */
+.profile-edit {
+  max-width: 600px;
+  padding: 15px;
+  margin: 30px auto;
+}
+  
+.profile-edit div {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.pro-button {
+  border: none;
+  background-color: blue;
+  color: white;
+  padding: 8px;
+  border-radius: 5px;
+}
+
+.profile-user {
+  justify-items: center;
+}

@@ -1,0 +1,132 @@
+// Place all the styles related to the rooms controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.search-form {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 15px;
+}
+
+.search-form div {
+  display: flex;
+  flex-direction: column;
+}
+
+.search-form input, .search-form select {
+  padding: 8px;
+  border-radius:  5px;
+}
+ 
+/* 施設登録画面　*/
+.new-room {
+  text-align: center;
+  margin: 30px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.new-room div {
+  margin-bottom: 15px;
+}
+
+.btn {
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.btn-primary {
+  background-color: blue;
+  color: white;
+  border: none;
+}
+
+/* 施設一覧*/
+.room-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 15px;
+}
+
+.room-info {
+  border: 1px solid silver;
+  border-radius: 5px;
+  background-color: yellow;
+  padding: 20px;
+  text-align: center;
+}
+
+.room-info img {
+  max-width: 100%;
+  height: auto;
+}
+
+.room-info h2 {
+  margin: 10px;
+}
+
+.room-info p {
+  margin: 5px;
+}
+
+.room-info a {
+  text-decoration: none;
+  font-weight: bold;
+  color: red;
+  cursor: pointer;
+}
+
+p a {
+  font-size: 20px;
+  text-decoration: none;
+  background-color: aqua;
+  padding: 5px;
+  border-radius: 10px;
+}
+
+/* ルーム編集*/
+.rooms-edit {
+  padding: 15px;
+  justify-items: center;
+}
+
+.rooms-edit div {
+  padding: 10px;
+}
+
+/* 施設詳細　*/
+h1 {
+  text-align: center;
+}
+
+.rooms-detail {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.rooms-detail p {
+  font-size: 16px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.btn-secondary {
+  color: silver;
+  background-color: black;
+}
+
+.room-img {
+  width: 600px;
+  height: auto;
+}

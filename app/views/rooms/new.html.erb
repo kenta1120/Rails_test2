@@ -1,0 +1,43 @@
+<h2>施設登録</h2>
+<div class="new-room">
+<%= form_with model: @room, local: true do |f| %>
+  <div>
+    <%= f.label :name, "施設名" %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div>
+    <%= f.label :description, "紹介文" %>
+    <%= f.text_area :description %>
+  </div>
+
+  <div>
+    <%= f.label :price, "宿泊料金"%>
+    <%= f.number_field :price, min:1 %>
+  </div>
+
+  <div>
+    <%= f.label :address, "住所" %>
+    <%= f.text_field :address %>
+  </div>
+
+  <div>
+    <%= f.label :image, "施設の画像"%>
+    <%= f.file_field :image %>
+  </div>
+
+  <%= f.submit "登録する", class: "btn btn-primary" %>
+<% end %>
+
+<% if @room.errors.any? %>
+  <div class="alert alert-danger">
+    <ul>
+      <% @room.errors.full_messages.each do |message|%>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= link_to "戻る", rooms_path, class: "btn btn-secondary" %>
+</div>

@@ -1,0 +1,20 @@
+<h2>予約一覧</h2>
+<div class="my_reservation-list">
+<% @reservations.each do |reservation| %>
+  <div class="my_reservation">
+    <%= image_tag((reservation.room.image.attached? ? reservation.room.image : "default-image.png"), class: "room-image")%>
+
+    <h3><%= link_to reservation.room.name, room_path(reservation.room), class: "my-room-name"%></h3>
+    <p>紹介文：<%= reservation.room.description %></p>
+    <p>合計金額：<%= reservation.total_price %></p>
+    <p>チェックイン日：<%= reservation.check_in %></p>
+    <p>チェックアウト日：<%= reservation.check_out %></p>
+    <p>予定確定日時：<%= reservation.created_at.strftime("%Y/%m/%d %H:%M") %></p>
+
+    <%= link_to "予約詳細", room_reservation_path(reservation.room, reservation), class: "btn btn-info" %>
+    <%= link_to "予約を削除", room_reservation_path(reservation.room, reservation), method: :delete, data: { confirm: "本当にこの予約を削除してもいいですか？"}, class: "btn btn-des" %>
+  </div>
+<% end %>
+</div>
+
+<%= link_to "施設一覧へ戻る", rooms_path, class: "btn btn-secondary" %>

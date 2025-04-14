@@ -1,0 +1,13 @@
+<h1><%= @room.name %></h1>
+
+<div class="rooms-detail">
+   <%= image_tag((@room.image.attached? ? @room.image : "default-image.png"), class: "room-img")%>
+  <p><%= @room.description %></p>
+  <p>宿泊料金：<%= @room.price %>円/泊</p>
+  <p>住所：<%= @room.address %></p>
+  <%= link_to "戻る", rooms_path, class: "btn btn-secondary" %>
+
+  <% if user_signed_in? %>
+    <%= link_to "予約する", new_room_reservation_path(@room), class: "btn btn-primary"%>
+  <% end %>
+</div>
