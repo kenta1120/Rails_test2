@@ -1,6 +1,6 @@
 <h2><%= @room.name %>の予約</h2>
 
-<%= form_with model: [@room, @reservation], local: true, class: "reservation-form" do |f|%>
+<%= form_with model: @reservation, url: confirm_room_reservations_path(@room), method: :post, local: true, class: "reservation-form" do |f|%>
   <div>
     <%= f.label :guests, "宿泊人数" %>
     <%= f.number_field :guests, min: 1 %>
@@ -17,6 +17,16 @@
   </div>
 
   <%= f.submit "予約する", class: "btn btn-primary" %>
+<% end %>
+
+<% if @reservation.errors.any? %>
+  <div class="alert alert-danger">
+    <ul>
+      <% @reservation.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
 <% end %>
 
 <%= link_to "戻る", room_path(@room), class: "btn btn-secondary" %>

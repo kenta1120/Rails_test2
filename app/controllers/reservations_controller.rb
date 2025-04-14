@@ -12,6 +12,7 @@ class ReservationsController < ApplicationController
 
   def create
     @room = Room.find(params[:room_id])
+    reservation_params = session.delete(:reservation_data) || params.require(:reservation).permit(:guests, :check_in, :check_out)
     @reservation = @room.reservations.build(params.require(:reservation).permit(:guests, :check_in, :check_out).merge(user: current_user))
     @reservation.user = current_user
     @reservation.total_price = calculate_price(@reservation)
@@ -38,6 +39,29 @@ class ReservationsController < ApplicationController
 
   def my_reservations
     @reservations = current_user.reservations.includes(:room)
+  end
+
+  def confirm
+    if request.post?
+      session[:reservation_data] = params.require(:reservation).permit(:guests, :check_in, :check_out).to_h
+    end
+
+    unless session[:reservation_data]
+      redirect_to new_room_reservation_path(params[:room_id])
+      return
+    end
+    
+    @room = Room.find(params[:room_id])
+    reservation_params = ActionController::Parameters.new(session[:reservation_data]).permit(:guests, :check_in, :check_out)
+    @reservation = @room.reservations.build(reservation_params.merge(user: current_user))
+
+    if @reservation.valid?
+      @stay_days = (@reservation.check_out.to_date - @reservation.check_in.to_date).to_i
+      @reservation.total_price = calculate_price(@reservation)
+      render :confirm
+    else
+      render :new
+    end
   end
 
   private
