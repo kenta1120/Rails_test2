@@ -1,0 +1,20 @@
+<h2>予約内容の確認</h2>
+
+<div class="confirm-list">
+  <p>チェックイン日: <%= @reservation.check_in.strftime("%Y/%m/%d") %></p>
+  <p>チェックアウト日: <%= @reservation.check_out.strftime("%Y/%m/%d") %></p>
+  <p>宿泊日数: <%= @stay_days %>泊</p>
+  <p>人数: <%= @reservation.guests %>人</p>
+  <p>支払い料金: <%= @reservation.total_price %>円</p>
+</div>
+
+<div class="confirm-submit">
+<%= form_with url: room_reservations_path(@room), method: :post, local: true do |f|%>
+  <%= hidden_field_tag "reservation[guests]", @reservation.guests%>
+  <%= hidden_field_tag "reservation[check_in]", @reservation.check_in%>
+  <%= hidden_field_tag "reservation[check_out]", @reservation.check_out%>
+  <%= f.submit "予約を確定する", class: "btn-primary"%>
+<% end %>
+</div>
+
+<%= button_to "戻る", new_room_reservation_path(@room), method: :get, class: "btn-secondary"%>

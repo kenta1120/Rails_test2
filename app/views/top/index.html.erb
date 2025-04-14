@@ -1,0 +1,10 @@
+<div class="search-container">
+  <h1>お気に入りの施設を見つけよう</h1>
+  <%= form_with url: searches_path, method: :get, local: true, class: "search-form" do %>
+      <%= select_tag :area, options_for_select(["", "東京", "大阪", "京都", "札幌"], params[:area]), class: "search-select"%>
+
+      <%= text_field_tag :search, params[:search], placeholder: "施設名・キーワードを入力",class: "search-input" %>
+
+      <%= submit_tag "検索", class: "search-button"%>
+  <% end %>
+</div>
